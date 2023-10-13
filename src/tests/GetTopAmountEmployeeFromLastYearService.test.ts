@@ -43,6 +43,7 @@ describe('GetTopAmountEmployeeFromLastYearService', () => {
 
     const service = new GetTopAmountEmployeeFromLastYearService();
     const result = service.execute(transactions, 2021);
+    console.log(result);
 
     expect(result).toEqual(['1', '2']);
   });
