@@ -1,21 +1,23 @@
 # Steps to run the application
 
 ## 1# Step
-Install the dependencies needed to run the application
+Build the Dockerfile into an image.
 ```
-npm install
+docker build -t transaction_submit_challenge_app .
 ```
 
 ---
+
 ## 2# Step
-Run the application.
+Run the docker container.
 ```
-npm run start
+docker run transaction_submit_challenge_app
 ```
 
 ---
+
 ## 3# Step
 Test the application.
 ```
-npm test
+docker run transaction_submit_challenge_app npm test
 ```
