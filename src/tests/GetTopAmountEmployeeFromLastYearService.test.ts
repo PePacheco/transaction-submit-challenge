@@ -4,7 +4,6 @@ import { GetTopAmountEmployeeFromLastYearService } from "../services/GetTopAmoun
 describe('Testing GetTopAmountEmployeeFromLastYearService execute method', () => {
   it('should return transactionIDs of type "alpha" for the top earner of the prior year', () => {
     const transactions: TransactionModel[] = [
-      // Employee A - 2021 transactions (total = 300)
       {
         transactionID: '1',
         amount: 100,
@@ -21,7 +20,7 @@ describe('Testing GetTopAmountEmployeeFromLastYearService execute method', () =>
         employee: { id: 'A', name: 'Employee A', categoryCode: 'red' },
         location: { id: '1', name: 'Location 1' },
       },
-      // Employee B - 2021 transactions (total = 150)
+
       {
         transactionID: '3',
         amount: 150,
@@ -30,7 +29,7 @@ describe('Testing GetTopAmountEmployeeFromLastYearService execute method', () =>
         employee: { id: 'B', name: 'Employee B', categoryCode: 'blue' },
         location: { id: '1', name: 'Location 1' },
       },
-      // Employee C - 2020 transactions (not relevant for the test)
+
       {
         transactionID: '4',
         amount: 1000,
@@ -49,7 +48,6 @@ describe('Testing GetTopAmountEmployeeFromLastYearService execute method', () =>
 
   it('should return an empty array if all transactions of the top earner are not of type "alpha"', () => {
     const transactions: TransactionModel[] = [
-      // Employee A - 2021 transactions (total = 300)
       {
         transactionID: '1',
         amount: 100,
@@ -66,7 +64,6 @@ describe('Testing GetTopAmountEmployeeFromLastYearService execute method', () =>
         employee: { id: 'A', name: 'Employee A', categoryCode: 'red' },
         location: { id: '1', name: 'Location 1' },
       },
-      // Employee B - 2021 transactions (total = 150)
       {
         transactionID: '3',
         amount: 150,
@@ -75,7 +72,6 @@ describe('Testing GetTopAmountEmployeeFromLastYearService execute method', () =>
         employee: { id: 'B', name: 'Employee B', categoryCode: 'blue' },
         location: { id: '1', name: 'Location 1' },
       },
-      // Employee C - 2020 transactions (not relevant for the test)
       {
         transactionID: '4',
         amount: 1000,
