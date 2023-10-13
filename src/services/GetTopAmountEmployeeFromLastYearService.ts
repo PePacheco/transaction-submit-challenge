@@ -14,9 +14,16 @@ export class GetTopAmountEmployeeFromLastYearService {
       return acc;
     }, {});
 
-    const topEarnerId = Object.keys(employeeSums).reduce((a, b) => employeeSums[a] > employeeSums[b] ? a : b);
+    const maxAmount = Math.max(...Object.values(employeeSums));
+    const topEarnerIds = Object.keys(employeeSums).filter(
+      (id) => employeeSums[id] === maxAmount
+    );
 
-    const topEarnerAlphaTransactions = lastYearTransactions.filter((transaction) => transaction.employee.id === topEarnerId && transaction.type === "alpha");
+    const topEarnerAlphaTransactions = lastYearTransactions.filter(
+      (transaction) =>
+        topEarnerIds.includes(transaction.employee.id) &&
+        transaction.type === "alpha"
+    );
 
     return topEarnerAlphaTransactions.map((transaction) => transaction.transactionID);
   }
