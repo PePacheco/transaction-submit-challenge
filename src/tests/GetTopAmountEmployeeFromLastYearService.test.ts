@@ -30,7 +30,7 @@ describe('GetTopAmountEmployeeFromLastYearService', () => {
         employee: { id: 'B', name: 'Employee B', categoryCode: 'blue' },
         location: { id: '1', name: 'Location 1' },
       },
-      // Employee C - 2020 transactions (not relevant for our test)
+      // Employee C - 2020 transactions (not relevant for the test)
       {
         transactionID: '4',
         amount: 1000,
@@ -42,7 +42,7 @@ describe('GetTopAmountEmployeeFromLastYearService', () => {
     ];
 
     const service = new GetTopAmountEmployeeFromLastYearService();
-    const result = service.execute(transactions);
+    const result = service.execute(transactions, 2021);
 
     expect(result).toEqual(['1', '2']);
   });

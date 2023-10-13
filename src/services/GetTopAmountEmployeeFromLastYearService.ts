@@ -4,8 +4,7 @@ import { getLastYear } from "../util/date";
 export class GetTopAmountEmployeeFromLastYearService {
   constructor() {}
 
-  execute(transactions: TransactionModel[]): string[] {
-    const lastYear = getLastYear();
+  execute(transactions: TransactionModel[], lastYear: number): string[] {
     const lastYearTransactions = transactions.filter((transaction) => new Date(transaction.timeStamp).getFullYear() === lastYear);
     console.log(lastYearTransactions);
 
